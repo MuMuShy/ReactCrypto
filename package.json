@@ -1,7 +1,7 @@
 {
   "name": "reactcrypto",
   "version": "0.1.0",
-  "homepage": "https://mumu.tw/ReactProject/CryptoWeb/",
+  "homepage": "ReactProject/CryptoWeb",
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^4.7.0",

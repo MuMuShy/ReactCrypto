@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import {Button,Menu,Typography,Avatar} from 'antd';
 import { Link } from 'react-router-dom';
-import {HomeOutlined,MoneyCollectOutlined,BulbOutlined,FundOutlined,MenuOutlined} from '@ant-design/icons';
+import {HomeOutlined,MoneyCollectOutlined,BulbOutlined,FundOutlined,MenuOutlined,WalletOutlined} from '@ant-design/icons';
 
 import icon from '../image/logo.png';
 const Navbar = () => {
@@ -29,7 +29,7 @@ const Navbar = () => {
             <div className="logo-container">
                 <Avatar src={icon} size="large"></Avatar>
                 <Typography.Title level={2} className="logo">
-                    <Link to="/">虛擬貨幣網</Link>
+                    <Link to={`/`}>虛擬貨幣網</Link>
                 </Typography.Title>
                 <Button className="menu-control-container" onClick={()=>setActiveMenu(!activeMenu)}>
                     <MenuOutlined></MenuOutlined>
@@ -38,16 +38,19 @@ const Navbar = () => {
             {activeMenu &&(
                 <Menu theme="dark">
                 <Menu.Item icon={<HomeOutlined/>}>
-                    <Link to="/">首頁</Link>
+                    <Link to={`/`}>首頁</Link>
                 </Menu.Item>
                 <Menu.Item icon={<FundOutlined/>}>
-                    <Link to="/cryptocurrencies">虛擬貨幣列表</Link>
+                    <Link to={`/cryptocurrencies`}>虛擬貨幣列表</Link>
                 </Menu.Item>
                 <Menu.Item icon={<MoneyCollectOutlined/>}>
-                    <Link to="/exchanges">交易所</Link>
+                    <Link to={`/exchanges`}>交易所</Link>
+                </Menu.Item>
+                <Menu.Item icon={<WalletOutlined/>}>
+                    <Link to={`/cryptowallet`}>錢包</Link>
                 </Menu.Item>
                 <Menu.Item icon={<BulbOutlined/>}>
-                    <Link to="/news">新聞</Link>
+                    <Link to={`/news`}>新聞</Link>
                 </Menu.Item>
                 </Menu>
             )}

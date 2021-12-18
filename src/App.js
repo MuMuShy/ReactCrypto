@@ -2,7 +2,7 @@ import React from 'react'
 import {Routes,Route,Link} from 'react-router-dom';
 import {Layout, Typography,Space} from 'antd';
 
-import {Navbar,Exchanges,Homepage,CryptoCurrencies,News,CryptoDetails} from './components';
+import {Navbar,Exchanges,Homepage,CryptoCurrencies,News,CryptoDetails,CryptoWallet} from './components';
 import './App.css'
 const App = () => {
     return (
@@ -14,12 +14,12 @@ const App = () => {
                 <Layout>
                     <div className="routes">
                         <Routes>
-                            <Route exact path="/" element={<Homepage/>}/>
-                            <Route path="/exchanges" exact element={<Exchanges/>}/>
-                            <Route path="/cryptocurrencies"  exact element={<CryptoCurrencies/>}/>
-                            <Route path="/crypto/:coinId" exact element={<CryptoDetails/>}/>
-                            <Route exact path="/news" exact element={<News/>}/>
-                            <Route path="https://mumu.tw/ReactProject/CryptoWeb" element={<Homepage/>} />
+                            <Route path={`/`} exact element={<Homepage/>}/>
+                            <Route path={`/exchanges`} exact element={<Exchanges/>}/>
+                            <Route path={`/cryptocurrencies`}exact element={<CryptoCurrencies/>}/>
+                            <Route path={`/crypto/:coinId`} exact element={<CryptoDetails/>}/>
+                            <Route path={`/cryptowallet`} exact element={<CryptoWallet/>}/>
+                            <Route path={`/news`} exact element={<News/>}/>
                         </Routes>
                     </div>
                 </Layout>
@@ -29,9 +29,9 @@ const App = () => {
                     學習用
                 </Typography.Title>
                 <Space>
-                    <Link to="/">首頁</Link>
-                    <Link to="/exchanges">交易所</Link>
-                    <Link to="/news">新聞</Link>
+                    <Link to={`/`}>首頁</Link>
+                    <Link to={`/exchanges`}>交易所</Link>
+                    <Link to={`/news`}>新聞</Link>
                 </Space>
             </div>
             </div>
